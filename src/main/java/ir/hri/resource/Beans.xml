@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="writer" class="ir.hri.business.Writer"/>
+    <bean id="niceWiter" class="ir.hri.business.NiceWiter"/>
+
+    <bean id="mySBWD1" class="ir.hri.business.MySpringBeanWithDependency">
+        <property name="writer" ref="writer"/>
+    </bean>
+
+    <bean id="mySBWD2" class="ir.hri.business.MySpringBeanWithDependency" scope="prototype">
+        <property name="writer" ref="niceWiter"/>
+    </bean>
+</beans>
