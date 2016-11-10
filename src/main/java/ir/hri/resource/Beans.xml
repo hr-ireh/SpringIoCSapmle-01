@@ -3,7 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="writer" class="ir.hri.business.Writer"/>
+    <bean id="writer" class="ir.hri.business.Writer"
+          init-method="myCustomInit"
+          destroy-method="myCustomDestroy">
+        <property name="message" value="Writer"/>
+    </bean>
     <bean id="niceWiter" class="ir.hri.business.NiceWiter"/>
 
     <bean id="mySBWD1" class="ir.hri.business.MySpringBeanWithDependency">
