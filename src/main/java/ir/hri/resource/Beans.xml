@@ -8,7 +8,7 @@
           destroy-method="myCustomDestroy">
         <property name="message" value="Writer"/>
     </bean>
-    <bean id="niceWiter" class="ir.hri.business.NiceWiter"/>
+    <bean id="niceWiter" class="ir.hri.business.NiceWriter"/>
 
     <bean id="mySBWD1" class="ir.hri.business.MySpringBeanWithDependency">
         <property name="writer" ref="writer"/>

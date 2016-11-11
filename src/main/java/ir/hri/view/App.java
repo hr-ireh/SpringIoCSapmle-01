@@ -1,6 +1,7 @@
 package ir.hri.view;
 
 import ir.hri.business.MySpringBeanWithDependency;
+import ir.hri.business.Writer;
 import ir.hri.util.SpringUtil;
 
 public class App {
@@ -11,5 +12,8 @@ public class App {
 
         MySpringBeanWithDependency test2 = (MySpringBeanWithDependency) SpringUtil.getApplicationContext().getBean("mySBWD2");
         test2.run();
+
+        Writer writer = (Writer) SpringUtil.getannotationConfigApplicationContext().getBean("Writer");
+        writer.getMessage();
     }
 }
